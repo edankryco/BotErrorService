@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
+import { AppUpdate } from './app.update';
 import { AppService } from './app.service';
 import { TelegrafModule } from 'nestjs-telegraf';
 import { PosteriorsService } from './ErrorGet/posteriors.service';
-import { PosteriorsModule } from './ErrorGet/posteriorsModule';
+import { PosteriorsModule } from './ErrorGet/posteriors.module';
 
 @Module({
   imports: [
@@ -14,7 +14,6 @@ import { PosteriorsModule } from './ErrorGet/posteriorsModule';
     }),
     PosteriorsModule,
   ],
-  controllers: [AppController],
-  providers: [AppService, PosteriorsService],
+  providers: [AppService, PosteriorsService, AppUpdate],
 })
 export class AppModule {}
